@@ -8,7 +8,7 @@
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>- (NSUInteger)hash {
-    return self.identifier;
+    return (NSUInteger))self;
 }
 
 - (BOOL)isEqual:(id)object {
