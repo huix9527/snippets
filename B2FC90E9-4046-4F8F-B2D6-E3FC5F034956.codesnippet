@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>CABasicAnimation *animation     = [CABasicAnimation animationWithKeyPath:@"radius"];
+    animation.duration              = 0.4;
+    animation.fromValue             = [NSNumber numberWithDouble:20.0];
+    animation.toValue               = [NSNumber numberWithDouble:40.0];
+    animation.timingFunction        = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    animation.removedOnCompletion   = YES;
+    
+    [layer addAnimation:animation forKey:@"radius"];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B2FC90E9-4046-4F8F-B2D6-E3FC5F034956</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>CABasicAnimation</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

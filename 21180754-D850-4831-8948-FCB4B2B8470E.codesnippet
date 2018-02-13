@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>static NSString *const kItemsKey = @"&lt;#property#&gt;";
+
+- (void)insertObject:(&lt;#Type#&gt; *)value in&lt;#Property#&gt;AtIndex:(NSUInteger)idx {
+    NSIndexSet* indexes = [NSIndexSet indexSetWithIndex:idx];
+    [self willChange:NSKeyValueChangeInsertion valuesAtIndexes:indexes forKey:kItemsKey];
+    NSMutableOrderedSet *tmpOrderedSet = [NSMutableOrderedSet orderedSetWithOrderedSet:[self mutableOrderedSetValueForKey:kItemsKey]];
+    [tmpOrderedSet insertObject:value atIndex:idx];
+    [self setPrimitiveValue:tmpOrderedSet forKey:kItemsKey];
+    [self didChange:NSKeyValueChangeInsertion valuesAtIndexes:indexes forKey:kItemsKey];
+}
+
+- (void)removeObjectFrom&lt;#Property#&gt;AtIndex:(NSUInteger)idx {
+    NSIndexSet* indexes = [NSIndexSet indexSetWithIndex:idx];
+    [self willChange:NSKeyValueChangeRemoval valuesAtIndexes:indexes forKey:kItemsKey];
+    NSMutableOrderedSet *tmpOrderedSet = [NSMutableOrderedSet orderedSetWithOrderedSet:[self mutableOrderedSetValueForKey:kItemsKey]];
+    [tmpOrderedSet removeObjectAtIndex:idx];
+    [self setPrimitiveValue:tmpOrderedSet forKey:kItemsKey];
+    [self didChange:NSKeyValueChangeRemoval valuesAtIndexes:indexes forKey:kItemsKey];
+}
+
+- (void)insert&lt;#Property#&gt;:(NSArray *)values atIndexes:(NSIndexSet *)indexes {
+    [self willChange:NSKeyValueChangeInsertion valuesAtIndexes:indexes forKey:kItemsKey];
+    NSMutableOrderedSet *tmpOrderedSet = [NSMutableOrderedSet orderedSetWithOrderedSet:[self mutableOrderedSetValueForKey:kItemsKey]];
+    [tmpOrderedSet insertObjects:values atIndexes:indexes];
+    [self setPrimitiveValue:tmpOrderedSet forKey:kItemsKey];
+    [self didChange:NSKeyValueChangeInsertion valuesAtIndexes:indexes forKey:kItemsKey];
+}
+
+- (void)remove&lt;#Property#&gt;AtIndexes:(NSIndexSet *)indexes {
+    [self willChange:NSKeyValueChangeRemoval valuesAtIndexes:indexes forKey:kItemsKey];
+    NSMutableOrderedSet *tmpOrderedSet = [NSMutableOrderedSet orderedSetWithOrderedSet:[self mutableOrderedSetValueForKey:kItemsKey]];
+    [tmpOrderedSet removeObjectsAtIndexes:indexes];
+    [self setPrimitiveValue:tmpOrderedSet forKey:kItemsKey];
+    [self didChange:NSKeyValueChangeRemoval valuesAtIndexes:indexes forKey:kItemsKey];
+}
+
+- (void)replaceObjectIn&lt;#Property#&gt;AtIndex:(NSUInteger)idx withObject:(&lt;#Type#&gt; *)value {
+    NSIndexSet* indexes = [NSIndexSet indexSetWithIndex:idx];
+    [self willChange:NSKeyValueChangeReplacement valuesAtIndexes:indexes forKey:kItemsKey];
+    NSMutableOrderedSet *tmpOrderedSet = [NSMutableOrderedSet orderedSetWithOrderedSet:[self mutableOrderedSetValueForKey:kItemsKey]];
+    [tmpOrderedSet replaceObjectAtIndex:idx withObject:value];
+    [self setPrimitiveValue:tmpOrderedSet forKey:kItemsKey];
+    [self didChange:NSKeyValueChangeReplacement valuesAtIndexes:indexes forKey:kItemsKey];
+}
+
+- (void)replace&lt;#Property#&gt;AtIndexes:(NSIndexSet *)indexes with&lt;#Property#&gt;:(NSArray *)values {
+    [self willChange:NSKeyValueChangeReplacement valuesAtIndexes:indexes forKey:kItemsKey];
+    NSMutableOrderedSet *tmpOrderedSet = [NSMutableOrderedSet orderedSetWithOrderedSet:[self mutableOrderedSetValueForKey:kItemsKey]];
+    [tmpOrderedSet replaceObjectsAtIndexes:indexes withObjects:values];
+    [self setPrimitiveValue:tmpOrderedSet forKey:kItemsKey];
+    [self didChange:NSKeyValueChangeReplacement valuesAtIndexes:indexes forKey:kItemsKey];
+}
+
+- (void)add&lt;#Property#&gt;Object:(&lt;#Type#&gt; *)value {
+    NSMutableOrderedSet *tmpOrderedSet = [NSMutableOrderedSet orderedSetWithOrderedSet:[self mutableOrderedSetValueForKey:kItemsKey]];
+    NSUInteger idx = [tmpOrderedSet count];
+    NSIndexSet* indexes = [NSIndexSet indexSetWithIndex:idx];
+    [self willChange:NSKeyValueChangeInsertion valuesAtIndexes:indexes forKey:kItemsKey];
+    [tmpOrderedSet addObject:value];
+    [self setPrimitiveValue:tmpOrderedSet forKey:kItemsKey];
+    [self didChange:NSKeyValueChangeInsertion valuesAtIndexes:indexes forKey:kItemsKey];
+}
+
+- (void)remove&lt;#Property#&gt;Object:(&lt;#Type#&gt; *)value {
+    NSMutableOrderedSet *tmpOrderedSet = [NSMutableOrderedSet orderedSetWithOrderedSet:[self mutableOrderedSetValueForKey:kItemsKey]];
+    NSUInteger idx = [tmpOrderedSet indexOfObject:value];
+    if (idx != NSNotFound) {
+        NSIndexSet* indexes = [NSIndexSet indexSetWithIndex:idx];
+        [self willChange:NSKeyValueChangeRemoval valuesAtIndexes:indexes forKey:kItemsKey];
+        [tmpOrderedSet removeObject:value];
+        [self setPrimitiveValue:tmpOrderedSet forKey:kItemsKey];
+        [self didChange:NSKeyValueChangeRemoval valuesAtIndexes:indexes forKey:kItemsKey];
+    }
+}
+
+- (void)add&lt;#Property#&gt;:(NSOrderedSet *)values {
+    NSMutableOrderedSet *tmpOrderedSet = [NSMutableOrderedSet orderedSetWithOrderedSet:[self mutableOrderedSetValueForKey:kItemsKey]];
+    NSMutableIndexSet *indexes = [NSMutableIndexSet indexSet];
+    NSUInteger valuesCount = [values count];
+    NSUInteger objectsCount = [tmpOrderedSet count];
+    for (NSUInteger i = 0; i &lt; valuesCount; ++i) {
+        [indexes addIndex:(objectsCount + i)];
+    }
+    if (valuesCount &gt; 0) {
+        [self willChange:NSKeyValueChangeInsertion valuesAtIndexes:indexes forKey:kItemsKey];
+        [tmpOrderedSet addObjectsFromArray:[values array]];
+        [self setPrimitiveValue:tmpOrderedSet forKey:kItemsKey];
+        [self didChange:NSKeyValueChangeInsertion valuesAtIndexes:indexes forKey:kItemsKey];
+    }
+}
+
+- (void)remove&lt;#Property#&gt;:(NSOrderedSet *)values {
+    NSMutableOrderedSet *tmpOrderedSet = [NSMutableOrderedSet orderedSetWithOrderedSet:[self mutableOrderedSetValueForKey:kItemsKey]];
+    NSMutableIndexSet *indexes = [NSMutableIndexSet indexSet];
+    for (id value in values) {
+        NSUInteger idx = [tmpOrderedSet indexOfObject:value];
+        if (idx != NSNotFound) {
+            [indexes addIndex:idx];
+        }
+    }
+    if ([indexes count] &gt; 0) {
+        [self willChange:NSKeyValueChangeRemoval valuesAtIndexes:indexes forKey:kItemsKey];
+        [tmpOrderedSet removeObjectsAtIndexes:indexes];
+        [self setPrimitiveValue:tmpOrderedSet forKey:kItemsKey];
+        [self didChange:NSKeyValueChangeRemoval valuesAtIndexes:indexes forKey:kItemsKey];
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>21180754-D850-4831-8948-FCB4B2B8470E</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>CoreDataAccessor</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
