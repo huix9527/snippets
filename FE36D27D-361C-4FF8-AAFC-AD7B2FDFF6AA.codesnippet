@@ -3,24 +3,24 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>iprop</string>
+	<string>bprop</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@property (nonatomic, assign) NSUInteger &lt;#NAME#&gt;;</string>
+	<string>@property (nonatomic, assign) BOOL &lt;#property#&gt;;</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>DBAF401B-3B48-4868-92A1-EDC530E5F356</string>
+	<string>FE36D27D-361C-4FF8-AAFC-AD7B2FDFF6AA</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
-	<key>IDECodeSnippetPlatformFamily</key>
-	<string>iphoneos</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>bprop</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Assign Property</string>
+	<string>Bool property</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>
