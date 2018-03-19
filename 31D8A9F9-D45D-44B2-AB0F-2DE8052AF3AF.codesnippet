@@ -3,21 +3,19 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>propa</string>
+	<string>propc</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@property (nonatomic, assign) NSUInteger &lt;#NAME#&gt;;</string>
+	<string>@property (nonatomic, copy) &lt;#TYPE#&gt; &lt;#NAME#&gt;;</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>DBAF401B-3B48-4868-92A1-EDC530E5F356</string>
+	<string>31D8A9F9-D45D-44B2-AB0F-2DE8052AF3AF</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
-	<key>IDECodeSnippetPlatformFamily</key>
-	<string>iphoneos</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Assign Property</string>
+	<string>Copy Property</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
